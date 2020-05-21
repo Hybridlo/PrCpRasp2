@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="WINDOWS-1251"?>
+
+<football>
+	<team id="1" name="Шахтер">
+		<player id="1" name="Евгений" isCaptain="0" salary="400000"/>
+		<player id="2" name="Андрей" isCaptain="1" salary="900000"/>
+		<player id="3" name="Николай" isCaptain="0" salary="525000"/>
+	</team>
+	<team id="2" name="Динамо">
+		<player id="4" name="Виктор" isCaptain="1" salary="450000"/>
+		<player id="5" name="Артем" isCaptain="0" salary="250000"/>
+	</team>
+</football>
