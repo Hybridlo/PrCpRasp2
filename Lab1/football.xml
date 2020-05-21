@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="WINDOWS-1251"?>
 
-<football>
+<football xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="football.xsd">
 	<team id="1" name="Шахтер">
 		<player id="1" name="Евгений" isCaptain="0" salary="400000"/>
 		<player id="2" name="Андрей" isCaptain="1" salary="900000"/>
