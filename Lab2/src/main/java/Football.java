@@ -33,6 +33,35 @@ public class Football {
 
     }
 
+    public void updateTeam(int code, String name) {
+        String sql = "UPDATE TEAMS " +
+                "SET ";
+        boolean previous = false;
+        if (name != null) {
+            sql += "NAME = '"+name+"'";
+            previous = true;
+        }
+
+        if (!previous) {
+            System.out.println("Nothing to update");
+            return;
+        }
+
+        sql += " WHERE ID_T = " + code;
+
+        try
+        {
+            stmt.executeUpdate(sql);
+            System.out.println("Team with id "+code+
+                    " updated");
+        } catch (SQLException e)
+        {
+            System.out.println("Error: team  "+name+
+                    " was not updated");
+            System.out.println(" >> "+e.getMessage());
+        }
+    }
+
     public Team getTeam(int code) {
         String sql = "SELECT *" +
                 "FROM TEAMS T1" +
@@ -126,6 +155,49 @@ public class Football {
         }
     }
 
+    public void updatePlayer(int code, String name, Boolean isCaptain, Integer salary, Integer teamCode) {
+        String sql = "UPDATE PLAYERS " +
+                "SET ";
+        boolean previous = false;
+        if (name != null) {
+            sql += "NAME = '"+name+"'";
+            previous = true;
+        }
+        if (isCaptain != null) {
+            if (previous) sql += ", ";
+            sql += "ISCAPTAIN = " + (isCaptain?"1":"0");
+            previous = true;
+        }
+        if (salary != null) {
+            if (previous) sql += ", ";
+            sql += "SALARY = " + salary;
+            previous = true;
+        }
+        if (teamCode != null) {
+            if (previous) sql += ", ";
+            sql += "ID_T = " + teamCode;
+            previous = true;
+        }
+
+        if (!previous) {
+            System.out.println("Nothing to update");
+            return;
+        }
+
+        sql += " WHERE ID_P = " + code;
+
+        try
+        {
+            stmt.executeUpdate(sql);
+            System.out.println("Player with id "+code+
+                    " updated");
+        } catch (SQLException e)
+        {
+            System.out.println("Error: player  "+name+
+                    " was not updated");
+            System.out.println(" >> "+e.getMessage());
+        }
+    }
 
     public Player getPlayer(int code) {
         String sql = "SELECT *" +

@@ -35,6 +35,12 @@ public class Main {
         football.deleteTeam(7);
         Thread.sleep(3000);
 
+        football.updateTeam(6, "INSANE");
+        Thread.sleep(3000);
+
+        football.updateTeam(1, null);
+        Thread.sleep(3000);
+
         football.showTeams();
         Thread.sleep(3000);
     }
@@ -56,6 +62,12 @@ public class Main {
         Thread.sleep(3000);
 
         football.deletePlayer(8);
+        Thread.sleep(3000);
+
+        football.updatePlayer(3, "KOLYA", null, 500000, null);
+        Thread.sleep(3000);
+
+        football.updatePlayer(1, null, null, null, null);
         Thread.sleep(3000);
 
         football.showPlayers();
